@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store | Trendy Styles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS remains the same as previous version */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #a23bf7;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .new-price {
+            font-weight: bold;
+            color: #27ae60; /* Green color for new/discounted price */
+            font-size: 1.2em;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+            font-size: 1em;
+}
+
+        .cart {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sale-banner {
+            background: #4ecdc4;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #a23bf7;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #cc9ff1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kamzy Fashion House</h1>
+        <p>Your Premium Fashion Destination</p>
+    </div>
+
+    <div class="sale-banner" id="banner">
+        🎉 FLASH SALE: 30% OFF SELECTED ITEMS! 🎉
+    </div>
+
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card" data-id="1" data-price="59.99">
+            <img src="Diamond necklace.jpg" class="product-image" alt="Diamond necklace">
+            <h3>Diamond Necklace</h3>
+            <p>$59.99 <span class="original-price">$85.99</span></p>
+            <button type="button">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" data-id="2" data-price="89.99">
+            <img src="leather jacket.jpg" class="product-image" alt="Designer Jacket">
+            <h3>Leather Jacket</h3>
+            <p>$89.99 <span class="original-price">$120.99</span></p>
+            <button type="button">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" data-id="3" data-price="129.99">
+            <img src="party shoes.jpg" class="product-image" alt="Party Shoes">
+            <h3>Party Shoes</h3>
+            <p>$129.99 <span class="original-price">$185.99</span></p>
+            <button type="button">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h2>Shopping Cart (<span id="cartCount">0</span>)</h2>
+        <div id="cartItems"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
